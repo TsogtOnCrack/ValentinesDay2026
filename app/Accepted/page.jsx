@@ -1,13 +1,15 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Accepted() {
   const [pin, setPin] = useState("");
+  const router = useRouter();
   const [shaking, setShaking] = useState(false);
   const [mounted, setMounted] = useState(false);
   const inputRef = useRef(null);
-  const correctPin = "!!2!!231";
+  const correctPin = "36357362";
 
   const handlePinChange = (e) => {
     let value = e.target.value.replace(/\D/g, "").slice(0, 8);
@@ -24,7 +26,7 @@ export default function Accepted() {
   const handleSubmit = () => {
     if (pin === correctPin) {
       alert("directing to secret page");
-      // You can add redirect here later
+      router.push('/Secret');
     } else {
       setShaking(true);
       setTimeout(() => setShaking(false), 500);
