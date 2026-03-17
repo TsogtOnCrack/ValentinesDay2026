@@ -108,7 +108,7 @@ export default function SecretGame() {
       
       setTimeout(() => {
         setGameComplete(true);
-        router.push('/Secret/gallery');
+        router.push('/secret/gallery');
       }, 2000);
     }
   }, [playerPos, showDoor, doorPosition, router]);

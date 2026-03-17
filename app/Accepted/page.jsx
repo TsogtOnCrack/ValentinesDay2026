@@ -26,7 +26,7 @@ export default function Accepted() {
   const handleSubmit = () => {
     if (pin === correctPin) {
       alert("directing to secret page");
-      router.push('/Secret');
+      router.push('/secret');
     } else {
       setShaking(true);
       setTimeout(() => setShaking(false), 500);
